@@ -1,17 +1,37 @@
 .App {
   text-align: center;
+  position: relative;
+  /* background-image: url('./asset/Daily German.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%; //for both height and width
+  background-position: center; */
+
+  background-image: url('./asset/Hands\ Give.png'), url('./asset/Hands\ Give\ 2.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto, auto; 
+  background-position: top right, bottom left;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.components {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
+
+
+
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +44,22 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+h1 {
+  color: #197755;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.unsubButton{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: transparent;
+  color: rgb(3, 3, 246);
+  font-size: 0.6rem;
+  border: none;
+  margin-bottom: 1rem;
 }
+
+

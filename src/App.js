@@ -1,24 +1,84 @@
-import logo from './logo.svg';
+
+// import './App.css';
+// import  HomeScreen  from './components/HomeScreen';
+// import  Unsubscribe  from './components/Unsubscribe';
+// import { useState } from 'react';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+// function App() {
+//   const [showUnsubscribe, setShowUnsubscribe] = useState(false);
+
+//   const handleToggleUnsubscribe = () => {
+//     console.log("Toggling unsubscribe");
+//     setShowUnsubscribe(!showUnsubscribe);
+//   };
+
+//   return (
+//     <Router>
+//       <div className="App">
+//         <div className='components'>
+        
+//           <Routes>
+//             <Route path="/" element={<HomeScreen />} />
+//             {showUnsubscribe && <Route path="/unsubscribe" element={<Unsubscribe />} />}
+           
+//           </Routes>
+//           </div>
+//           <div>
+//             <button className='unsubButton' onClick={handleToggleUnsubscribe}>
+//               {showUnsubscribe ? "Back to Home" : "Click here to unsubscribe"}
+//             </button>
+//           </div>
+       
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+import React from 'react';
 import './App.css';
+import HomeScreen from './components/HomeScreen';
+import Unsubscribe from './components/Unsubscribe';
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
+  const [showUnsubscribe, setShowUnsubscribe] = useState(false);
+
+  const handleToggleUnsubscribe = () => {
+    console.log("Toggling unsubscribe");
+    setShowUnsubscribe(!showUnsubscribe);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className='components'>
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            {showUnsubscribe && <Route path="unsubscribe" element={<Unsubscribe />} />}
+          </Routes>
+        </div>
+        <div>
+          {showUnsubscribe ? (
+            <Link to="/">
+              <button className='unsubButton' onClick={handleToggleUnsubscribe}>
+                Back to Home
+              </button>
+            </Link>
+          ) : (
+            <Link to="/unsubscribe">
+            <button className='unsubButton' onClick={handleToggleUnsubscribe}>
+              Click here to unsubscribe
+            </button>
+            </Link>
+          )}
+        </div>
+      </div>
+    </Router>
   );
 }
 
