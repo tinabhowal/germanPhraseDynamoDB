@@ -57,8 +57,8 @@ export const HomeScreen = () => {
   return (
     <div>
         <h1>Learn a German phrase every day!</h1>
-        <p style={{fontSize: '0.8rem', color: '#606469'}}>Don't let your busy schedule get in the way of your language learning. </p>
-        <p style={{fontSize: '0.8rem', color: '#606469', marginBottom: '3rem'}}>Subscribe now to receive a daily German phrase via email, and make sure you never miss a day of practice.</p>
+        <p style={{fontSize: '0.9rem', color: '#606469'}}>Don't let your busy schedule get in the way of your language learning. </p>
+        <p style={{fontSize: '0.9rem', color: '#606469', marginBottom: '3rem'}}>Subscribe now to receive a daily German phrase via email, and make sure you never miss a day of practice.</p>
         <form onSubmit={handleEmailSubmission}>
             <input 
             value={email}
