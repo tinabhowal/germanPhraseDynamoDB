@@ -23,7 +23,7 @@ export const HomeScreen = () => {
             return response.json();
           })
           .then(data => {
-            alert('You have successfully subscribed to Daily German Phrases')
+            alert('Please check your inbox for the verification email and verify your email to complete the subscription.')
           })
           .catch(error => {
             alert('Subscription failed.Please try again.')
@@ -57,8 +57,8 @@ export const HomeScreen = () => {
   return (
     <div>
         <h1>Learn a German phrase every day!</h1>
-        <p style={{fontSize: '0.9rem', color: '#606469'}}>Don't let your busy schedule get in the way of your language learning. </p>
-        <p style={{fontSize: '0.9rem', color: '#606469', marginBottom: '3rem'}}>Subscribe now to receive a daily German phrase via email, and make sure you never miss a day of practice.</p>
+        <p style={{fontSize: '0.9rem', color: '#606469', paddingLeft: '1rem', paddingRight: '1rem'}}>Don't let your busy schedule get in the way of your language learning. </p>
+        <p style={{fontSize: '0.9rem', color: '#606469', marginBottom: '3rem', paddingLeft: '1rem', paddingRight: '1rem'}}>Subscribe now to receive a daily German phrase via email, and make sure you never miss a day of practice.</p>
         <form onSubmit={handleEmailSubmission}>
             <input 
             value={email}
