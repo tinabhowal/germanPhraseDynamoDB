@@ -44,6 +44,7 @@ import HomeScreen from './components/HomeScreen';
 import Unsubscribe from './components/Unsubscribe';
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Impressum from './components/Impressum';
 
 function App() {
   const [showUnsubscribe, setShowUnsubscribe] = useState(false);
@@ -57,6 +58,7 @@ function App() {
     <Router>
       <div className="App">
         <div className='components'>
+          <Routes path="/impressum" element={<Impressum />} />
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             {showUnsubscribe && <Route path="unsubscribe" element={<Unsubscribe />} />}
@@ -76,6 +78,11 @@ function App() {
             </button>
             </Link>
           )}
+        </div>
+        <div> 
+      
+          <Link style={{ fontSize: '0.5rem' }} to="/impressum">Impressum</Link>
+     
         </div>
       </div>
     </Router>
