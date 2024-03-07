@@ -48,6 +48,11 @@ import Impressum from './components/Impressum';
 
 function App() {
   const [showUnsubscribe, setShowUnsubscribe] = useState(false);
+  const [showImpressum, setShowImpressum] = useState(false);
+
+  const handleToggleImpressumView = () => {
+    setShowImpressum(!showImpressum);
+  }
 
   const handleToggleUnsubscribe = () => {
     console.log("Toggling unsubscribe");
@@ -58,8 +63,10 @@ function App() {
     <Router>
       <div className="App">
         <div className='components'>
-          <Routes path="/impressum" element={<Impressum />} />
+    
           <Routes>
+            {showImpressum && <Route path="/impressum" element={<Impressum />} />}
+            
             <Route path="/" element={<HomeScreen />} />
             {showUnsubscribe && <Route path="unsubscribe" element={<Unsubscribe />} />}
           </Routes>
@@ -80,10 +87,16 @@ function App() {
           )}
         </div>
         <div> 
+          {showImpressum ? (
+            <Link  to="/impressum"><button style={{ fontSize: '0.5rem' }} onClick={handleToggleImpressumView}>Impressum</button></Link>
+            
+          ) : (
+            <Link  to="/"><button style={{ fontSize: '0.5rem' }} onClick={handleToggleImpressumView}>Back</button></Link>
+          )}
       
-          <Link style={{ fontSize: '0.5rem' }} to="/impressum">Impressum</Link>
-     
-        </div>
+      
+ 
+    </div>
       </div>
     </Router>
   );
